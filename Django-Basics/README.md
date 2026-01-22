@@ -1,1 +1,1 @@
-# my-django-course
+# django-course
