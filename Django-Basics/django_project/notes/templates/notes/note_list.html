@@ -1,25 +1,23 @@
-{% extends 'layout.html' %} {% block content %}
+{% extends 'layout.html' %} {% block content %} {% load static %}
 
-<style>
-
-</style>
-
-<h1>Notes</h1>
-<ul>
+<div class="container-list">
+  <h1>Notes</h1>
+  <ol style="list-style: none">
     {% for note in object_list %}
     <li>
-        <h2> {{ note.title }} </h2>
-        <a href="{% url 'note-detail' note.pk %}">detail</a> <br>
+      <h2> {{ forloop.counter }}. {{ note.title }} </h2>
+      <a href="{% url 'note-detail' note.pk %}">detail</a> <br>
     </li>
-    
     {% empty %}
     <li>
-        <p> No notes yet. </p>
+      <p> No notes yet. </p>
     </li>
     {% endfor %}
     <br><br>
     <li>
-        <a href="{% url 'note-create'%}">create note</a>
+      <a href="{% url 'note-create'%}">create note</a>
     </li>
-</ul>
+  </ol>
+</div>
+
 {% endblock content %}
