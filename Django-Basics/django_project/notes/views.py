@@ -13,6 +13,7 @@ class NoteDetailView(DetailView):
 
 class NoteListView(ListView):
     model = Note
+    paginate_by = 5
     template_name = "notes/note_list.html"
 
 
@@ -30,6 +31,7 @@ class NoteUpdateView(UpdateView):
 
 class NoteDeleteView(DeleteView):
     model = Note
-    form_class = NoteForm
-    template_name = "notes/note_delete.html"
+    template_name = "notes/note_confirm_delete.html"
     success_url = reverse_lazy("note-list")
+
+    
