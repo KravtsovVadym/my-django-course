@@ -3,4 +3,4 @@ from .models import Note
 
 @admin.register(Note)
 class NoteAdmin(admin.ModelAdmin):
-    list_display = ('title', 'create_at')
+    list_display = ('title', 'created_at')
